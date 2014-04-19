@@ -1,0 +1,77 @@
+{
+  "builders": [
+    {
+      "boot_command": [
+        "<esc><esc><enter><wait>",
+        "<tab> install auto=true priority=critical preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg<enter><wait>"
+      ],
+      "boot_wait": "2s",
+      "disk_size": 10480,
+      "guest_os_type": "Debian6-64",
+      "headless": false,
+      "http_directory": "http",
+      "iso_checksum": "b86774fe4de88be6378ba3d71b8029bd",
+      "iso_checksum_type": "md5",
+      "iso_url": "/iso/debian-7.2.0-amd64-netinst.iso",
+      "name": "wheezy-64",
+      "shutdown_command": "shutdown -h now",
+      "skip_compaction": false,
+      "ssh_password": "install",
+      "ssh_port": 22,
+      "ssh_username": "root",
+      "ssh_wait_timeout": "10000s",
+      "tools_upload_flavor": "linux",
+      "type": "vmware-iso",
+      "vmx_data": {
+        "cpuid.coresPerSocket": "1",
+        "memsize": "480",
+        "numvcpus": "1"
+      }
+    },
+    {
+      "boot_command": [
+        "<esc><esc><enter><wait>",
+        "<tab> install auto=true priority=critical preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg<enter><wait>"
+      ],
+      "boot_wait": "2s",
+      "disk_size": 10480,
+      "guest_os_type": "Debian6",
+      "headless": false,
+      "http_directory": "http",
+      "iso_checksum": "564282a81b5aef7015501e497fc63d81",
+      "iso_checksum_type": "md5",
+      "iso_url": "/iso/debian-7.2.0-i386-netinst.iso",
+      "name": "wheezy-32",
+      "shutdown_command": "shutdown -h now",
+      "skip_compaction": false,
+      "ssh_password": "install",
+      "ssh_port": 22,
+      "ssh_username": "root",
+      "ssh_wait_timeout": "10000s",
+      "tools_upload_flavor": "linux",
+      "type": "vmware-iso",
+      "vmx_data": {
+        "cpuid.coresPerSocket": "1",
+        "memsize": "480",
+        "numvcpus": "1"
+      }
+    }
+  ],
+  "post-processors": [
+    "vagrant"
+  ],
+  "provisioners": [
+    {
+      "scripts": [
+        "scripts/vagrant.sh",
+        "scripts/sudo.sh",
+        "scripts/ssh.sh",
+        "scripts/vmtools.sh",
+        "scripts/puppet.sh",
+        "scripts/zero.sh"
+      ],
+      "type": "shell"
+    }
+  ]
+}
+
