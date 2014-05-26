@@ -1,6 +1,6 @@
-Debian Packer.io scripts
-------------------------
+# Packer.io scripts for Debian
 
-Use to Debian boxes for vagrant.
+Used to build boxes for Vagrant
 
-Use: packer build template_wheezy.json
+*To-do need to tweak the script to support wheezy and squeeze,
+for now run packer build template.wheezy.json
