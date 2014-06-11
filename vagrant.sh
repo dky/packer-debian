@@ -10,7 +10,7 @@ BOXNAME2="wheezy-64"
 rm -rf ./output-*
 
 #Build the boxes
-$PACKERCMD build template.json
+$PACKERCMD build template.wheezy.json
 
 #Delete existing vagrant boxes
 $VAGRANTCMD box remove $BOXNAME1

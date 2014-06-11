@@ -14,7 +14,7 @@
 	],
   "builders": [
     {
-      "type": "vmware",
+      "type": "vmware-iso",
 		"name": "squeeze-32",
       "boot_command": [
 		  "<esc><esc><enter><wait>",
@@ -33,7 +33,7 @@
       "ssh_port": 22,
       "ssh_wait_timeout": "10000s",
       "shutdown_command": "shutdown -h now",
-		"headless": false,
+		"headless": true,
       "tools_upload_flavor": "linux",
       "vmx_data": {
         "memsize": "480",
