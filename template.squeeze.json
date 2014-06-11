@@ -4,10 +4,10 @@
 		"type": "shell",
 		"scripts": [ 
 			"scripts/vagrant.sh",
-			"scripts/sudo.sh",
 			"scripts/ssh.sh",
 			"scripts/vmtools.sh",
 			"scripts/puppet.sh",
+			"scripts/sudo.sh",
 			"scripts/zero.sh"
 		]
 	 }
