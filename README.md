@@ -1,3 +1,3 @@
 # Packer.io scripts for Debian
 
-## Build vagrant boxes for Squeeze and Wheezy.
+Used to build Vagrant boxes for Squeeze and Wheezy.
