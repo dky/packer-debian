@@ -3,14 +3,16 @@
 PACKERCMD=/usr/local/packer/packer
 VAGRANTCMD=/usr/bin/vagrant
 
-BOXNAME1="wheezy-32"
-BOXNAME2="wheezy-64"
+RELEASE="wheezy"
+
+BOXNAME1="$RELEASE-32"
+BOXNAME2="$RELEASE-64"
 
 #Clean up output if exist
 rm -rf ./output-*
 
 #Build the boxes
-$PACKERCMD build template.wheezy.json
+$PACKERCMD build template."$RELEASE".json
 
 #Delete existing vagrant boxes
 $VAGRANTCMD box remove $BOXNAME1
@@ -22,7 +24,3 @@ $VAGRANTCMD box add $BOXNAME2 packer_"$BOXNAME2"_vmware.box
 
 #Remove the boxes
 rm -f ./*.box
-
-#Notify completion
-terminal-notifier -message "Packer build for $BOXNAME1 and $BOXNAME2 complete" -title "Packer Builds"
-

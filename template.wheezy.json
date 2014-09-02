@@ -8,7 +8,7 @@
 			"boot_wait": "2s",
 			"disk_size": 10480,
 			"guest_os_type": "Debian7-64",
-			"headless": true,
+			"headless": false,
 			"http_directory": "http",
 			"iso_checksum": "b86774fe4de88be6378ba3d71b8029bd",
 			"iso_checksum_type": "none",
@@ -36,7 +36,7 @@
 			"boot_wait": "2s",
 			"disk_size": 10480,
 			"guest_os_type": "Debian7",
-			"headless": true,
+			"headless": false,
 			"http_directory": "http",
 			"iso_checksum": "0e6eaacb5a5828473afe90f6df9c8f16",
 			"iso_checksum_type": "none",
@@ -59,19 +59,19 @@
 	],
 	"post-processors": [
 		"vagrant"
-  ],
-  "provisioners": [
-	  {
-		  "scripts": [
-			  "scripts/vagrant.sh",
-			  "scripts/sudo.sh",
-			  "scripts/ssh.sh",
-			  "scripts/vmtools.sh",
-			  "scripts/puppet.sh",
-			  "scripts/zero.sh"
-		  ],
-		  "type": "shell"
-	  }
-  ]
+	],
+	"provisioners": [
+		{
+			"scripts": [
+				"scripts/vagrant.sh",
+				"scripts/sudo.sh",
+				"scripts/ssh.sh",
+				"scripts/vmtools.sh",
+				"scripts/puppet.sh",
+				"scripts/zero.sh"
+			],
+			"type": "shell"
+		}
+	]
 }
 
